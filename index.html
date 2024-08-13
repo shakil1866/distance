@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        form {
+            padding: 20px 30px 20px 30px;
+            background-color: rgba(200, 211, 99, 0.5);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+
+        h2 {
+            padding: 20px;
+        }
+
+        h3 {
+            padding: 10px;
+        }
+
+        h4 {
+            padding: 7px 0px;
+        }
+
+        p {
+            /* width: 0%; */
+            color: rgb(82, 79, 79);
+            font-size: large;
+            padding: 10px;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+        .mainbox1 {
+            display: flex;
+            gap: 30px;
+        }
+
+        input {
+            /* align-self: center; */
+            font-size: 17px;
+            font-weight: bold;
+            width: 90%;
+            border-radius: 5px;
+            padding: 10px 5px 10px 5px;
+            margin: 5px 5px 5px 0px;
+            border: 1px solid gray;
+        }
+
+        button {
+
+            margin: 5px 0px;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        .btn1 {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            transition: all 0.5s;
+            font-weight: bold;
+        }
+
+        .btn1:hover {
+            color: black;
+            background-color: rgb(101, 221, 101);
+        }
+
+        .btn2 {
+            background-color: rgba(0, 0, 0, 0.267);
+        }
+    </style>
+    <div class="main">
+
+        <form action="">
+            <h2>Km to Miles convertion</h2>
+
+            <div class="mainbox1">
+                <div class="box1">
+                    <h3>From</h3>
+                    <p>Kilometer(KM)</p>
+                </div>
+                <div class="box2">
+                    <h3>To</h3>
+                    <p>Mile(MI)</p>
+                </div>
+
+            </div>
+            <hr style="width: 90%;">
+            <h4>Kilometer:</h4>
+            <input type="number" name="" id="input1" placeholder="Enter Kilometer">
+
+            <button type="button" class="btn1">Convert</button>
+            <button type="reset" class="btn2">Reset</button>
+            <h4>Miles:</h4>
+            <input type="text" name="" id="input2">
+            
+        </form>
+    </div>
+
+    <script>
+
+        let input1 = document.getElementById("input1");
+        let input2 = document.getElementById("input2");
+        let btn1 = document.querySelector(".btn1")
+
+        let main_click = () => {
+            let inputValue = input1.value ;
+            console.log(inputValue);
+            const factor = 0.621371;
+            let miles = inputValue * factor;
+            console.log(miles);
+            input2.value = `${miles} Miles`;
+        }
+
+        btn1.addEventListener("click", () => {
+            main_click();
+        })
+
+    </script>
+</body>
+
+</html>
